@@ -1,3 +1,7 @@
 lenombrealeatoire:
   path: /nombre/aleatoire
   controller: App\Controller\TestController::nbaleatoire
+
+maintenant:
+  path: /maintenant
+  controller: App\Controller\MaintenantController::maintenant
