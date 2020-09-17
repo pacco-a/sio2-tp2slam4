@@ -8,16 +8,21 @@ class MaintenantController extends AbstractController
 {
   public function maintenant()
   {
-    // date_default_timezone_set('UTC');
-
-    $day = date("d");
-    $hour = date("H");
+    
+    //met date en français
+    setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');
+    
+    // var heures et minutes
+    $hour = date("H");    
     $minuts = date("i");
+    
+    // jour xx mois année
+    $fulldate = strftime("%A %d %B %Y");
 
     return $this->render("maintenant.html.twig", [
-      "jour" => $day,
       "heure" => $hour,
       "minutes" => $minuts,
+      "fulldate" => $fulldate,
     ]);
   }
 }
